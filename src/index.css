@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  @apply bg-gray-50 text-gray-900 antialiased dark:bg-gray-950 dark:text-gray-100;
+}
+
+* {
+  scrollbar-width: thin;
+}
+
+@layer components {
+  .input-base {
+    @apply w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900
+      shadow-sm outline-none transition focus:border-brand-500 focus:ring-2 focus:ring-brand-500/30
+      dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-medium
+      transition focus:outline-none focus:ring-2 focus:ring-brand-500/40 disabled:cursor-not-allowed
+      disabled:opacity-60;
+  }
+
+  .btn-primary {
+    @apply btn bg-brand-600 text-white hover:bg-brand-700;
+  }
+
+  .btn-secondary {
+    @apply btn border border-gray-300 bg-white text-gray-700 hover:bg-gray-100
+      dark:border-gray-700 dark:bg-gray-900 dark:text-gray-200 dark:hover:bg-gray-800;
+  }
+
+  .btn-danger {
+    @apply btn bg-red-600 text-white hover:bg-red-700;
+  }
+
+  .card {
+    @apply rounded-2xl border border-gray-200 bg-white p-5 shadow-sm
+      dark:border-gray-800 dark:bg-gray-900;
+  }
+
+  .label {
+    @apply mb-1 block text-sm font-medium text-gray-700 dark:text-gray-300;
+  }
+}
+
+select.input-base {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.625rem center;
+  background-size: 1.1em 1.1em;
+  padding-right: 2.25rem;
+}
+
+.dark select.input-base {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239ca3af' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+}
+
+.dark .input-base::-webkit-calendar-picker-indicator {
+  filter: invert(1) brightness(0.85);
+}
